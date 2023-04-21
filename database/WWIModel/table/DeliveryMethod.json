@@ -173,7 +173,7 @@
 			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"DeliveryMethodId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"DeliveryMethodName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DeliveryMethodDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"LastEditedBy\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ValidFrom\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ValidTo\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}}]}",
 			"spark.sql.partitionProvider": "catalog"
 		},
-		"ObjectVersion": 3,
+		"ObjectVersion": 4,
 		"ObjectId": "9d4447b1-275c-4f3d-a8b0-6dc3db97a651",
 		"Description": "The method by which the document was delivered.\n\nEx:\n- Mail\n- Registered Mail\n- FedEx\n- UPS\n- Courier\n- Email\n- EDI\n- Internet"
 	},
