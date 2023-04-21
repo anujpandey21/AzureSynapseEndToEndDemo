@@ -1,0 +1,17 @@
+{
+	"name": "hrdatacsv_adls",
+	"properties": {
+		"content": {
+			"query": "{\n    \"name\": \"hrdatacsv_adls\",\n    \"properties\": {\n        \"linkedServiceName\": {\n            \"referenceName\": \"<name of linked service>\",\n            \"type\": \"LinkedServiceReference\"\n        },\n        \"annotations\": [],\n        \"type\": \"DelimitedText\",\n        \"typeProperties\": {\n            \"location\": {\n                \"type\": \"AzureBlobFSLocation\",\n                \"fileName\": \"00 HRData.csv\",\n                \"folderPath\": \"<folder_name>\",\n                \"fileSystem\": \"<container_name>\"\n            },\n            \"columnDelimiter\": \",\",\n            \"escapeChar\": \"\\\\\",\n            \"firstRowAsHeader\": true,\n            \"quoteChar\": \"\\\"\"\n        },\n        \"schema\": [\n            {\n                \"name\": \"Employee_Name\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"EmpID\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"MarriedID\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"DeptID\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"PayRate\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"PositionID\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"Position\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"State\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"DOB\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"Sex\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"DateofHire\",\n                \"type\": \"String\"\n            },\n            {\n                \"name\": \"Department\",\n                \"type\": \"String\"\n            }\n        ]\n    }\n}",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

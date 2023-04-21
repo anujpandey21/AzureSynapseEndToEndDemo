@@ -1,0 +1,1249 @@
+{
+	"name": "deltaLakeDemoPart1",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "Synapseinaday",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "472g",
+			"driverCores": 80,
+			"executorMemory": "472g",
+			"executorCores": 80,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "8617b6e3-dab7-45a8-b8fd-495fcc7bbfc3"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"5b305b2b-f45f-4d6d-86e2-ae180a870791": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "2",
+										"1": "2023-04-08 17:31:55.38",
+										"4": "DELETE",
+										"5": {
+											"predicate": "[\"((spark_catalog.deltademo.deltapartitionedtaxitrips.puYear = 2010) AND (spark_catalog.deltademo.deltapartitionedtaxitrips.puMonth = 1))\"]"
+										},
+										"9": "1",
+										"10": "Serializable",
+										"11": "false",
+										"12": {
+											"numRemovedFiles": "7",
+											"numCopiedRows": "0",
+											"numAddedChangeFiles": "0",
+											"executionTimeMs": "402",
+											"numDeletedRows": "14861842",
+											"scanTimeMs": "400",
+											"numAddedFiles": "0",
+											"rewriteTimeMs": "0"
+										},
+										"14": "Apache-Spark/3.3.1.5.2-86323270 Delta-Lake/2.2.0.2"
+									},
+									{
+										"0": "1",
+										"1": "2023-04-08 17:28:36.328",
+										"4": "MERGE",
+										"5": {
+											"predicate": "(((((source.vendorID = target.vendorID) AND (source.tpepPickupDateTime = target.tpepPickupDateTime)) AND ((source.tpepDropoffDateTime = target.tpepDropoffDateTime) AND (source.startLat = target.startLat))) AND (((source.startLon = target.startLon) AND (source.endLat = target.endLat)) AND (source.endLon = target.endLon))) AND ((((source.passengerCount = target.passengerCount) AND (source.tripDistance = target.tripDistance)) AND ((source.rateCodeId = target.rateCodeId) AND (source.paymentType = target.paymentType))) AND (((source.totalAmount = target.totalAmount) AND (target.puYear = 2010)) AND (target.puMonth IN (2, 3)))))",
+											"matchedPredicates": "[{\"actionType\":\"update\"}]",
+											"notMatchedPredicates": "[{\"actionType\":\"insert\"}]"
+										},
+										"9": "0",
+										"10": "Serializable",
+										"11": "false",
+										"12": {
+											"numTargetRowsCopied": "2889",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "23",
+											"executionTimeMs": "67108",
+											"numTargetRowsInserted": "12867002",
+											"unmodifiedRewriteTimeMs": "3832",
+											"scanTimeMs": "10829",
+											"numTargetRowsUpdated": "10711387",
+											"numOutputRows": "23581278",
+											"numTargetChangeFilesAdded": "0",
+											"numSourceRows": "23578389",
+											"numTargetFilesRemoved": "5",
+											"rewriteTimeMs": "51113"
+										},
+										"14": "Apache-Spark/3.3.1.5.2-86323270 Delta-Lake/2.2.0.2"
+									},
+									{
+										"0": "0",
+										"1": "2023-04-08 17:11:50.843",
+										"4": "WRITE",
+										"5": {
+											"mode": "Overwrite",
+											"partitionBy": "[\"puYear\",\"puMonth\"]"
+										},
+										"10": "Serializable",
+										"11": "false",
+										"12": {
+											"numFiles": "12",
+											"numOutputRows": "25576118",
+											"numOutputBytes": "1322678916"
+										},
+										"14": "Apache-Spark/3.3.1.5.2-86323270 Delta-Lake/2.2.0.2"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "version",
+										"type": "bigint"
+									},
+									{
+										"key": "1",
+										"name": "timestamp",
+										"type": "timestamp"
+									},
+									{
+										"key": "2",
+										"name": "userId",
+										"type": "string"
+									},
+									{
+										"key": "3",
+										"name": "userName",
+										"type": "string"
+									},
+									{
+										"key": "4",
+										"name": "operation",
+										"type": "string"
+									},
+									{
+										"key": "5",
+										"name": "operationParameters",
+										"type": "MapType(StringType,StringType,true)"
+									},
+									{
+										"key": "6",
+										"name": "job",
+										"type": "StructType(StructField(jobId,StringType,true),StructField(jobName,StringType,true),StructField(runId,StringType,true),StructField(jobOwnerId,StringType,true),StructField(triggerType,StringType,true))"
+									},
+									{
+										"key": "7",
+										"name": "notebook",
+										"type": "StructType(StructField(notebookId,StringType,true))"
+									},
+									{
+										"key": "8",
+										"name": "clusterId",
+										"type": "string"
+									},
+									{
+										"key": "9",
+										"name": "readVersion",
+										"type": "bigint"
+									},
+									{
+										"key": "10",
+										"name": "isolationLevel",
+										"type": "string"
+									},
+									{
+										"key": "11",
+										"name": "isBlindAppend",
+										"type": "boolean"
+									},
+									{
+										"key": "12",
+										"name": "operationMetrics",
+										"type": "MapType(StringType,StringType,true)"
+									},
+									{
+										"key": "13",
+										"name": "userMetadata",
+										"type": "string"
+									},
+									{
+										"key": "14",
+										"name": "engineInfo",
+										"type": "string"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"1"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"1d0f86b3-c593-453d-a876-c0ebcea71556": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "2010",
+										"1": "2",
+										"2": "11146374"
+									},
+									{
+										"0": "2010",
+										"1": "1",
+										"2": "14861842"
+									},
+									{
+										"0": "2010",
+										"1": "3",
+										"2": "12434904"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "puYear",
+										"type": "int"
+									},
+									{
+										"key": "1",
+										"name": "puMonth",
+										"type": "int"
+									},
+									{
+										"key": "2",
+										"name": "count",
+										"type": "bigint"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"1"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"324ae02b-1052-4c10-a97a-bb37fa52077f": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "2010",
+										"1": "2",
+										"2": "11146374"
+									},
+									{
+										"0": "2010",
+										"1": "1",
+										"2": "14861842"
+									},
+									{
+										"0": "2010",
+										"1": "3",
+										"2": "12434904"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "puYear",
+										"type": "int"
+									},
+									{
+										"key": "1",
+										"name": "puMonth",
+										"type": "int"
+									},
+									{
+										"key": "2",
+										"name": "count",
+										"type": "bigint"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"1"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/225f1de1-c18b-452f-9c59-220bd04ee33f/resourceGroups/rg-newmip/providers/Microsoft.Synapse/workspaces/syn-newmips/bigDataPools/Synapseinaday",
+				"name": "Synapseinaday",
+				"type": "Spark",
+				"endpoint": "https://syn-newmips.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Synapseinaday",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 10,
+				"cores": 80,
+				"memory": 472,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Notebook Configuration"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"print(spark.conf.get(\"spark.executor.instances\"))\r\n",
+					"print(spark.conf.get(\"spark.executor.cores\"))\r\n",
+					"print(spark.conf.get(\"spark.executor.memory\"))"
+				],
+				"execution_count": 1
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"Note: If you request more number of vcores than  pool limit or available vcores in the pool, you will get an exception. Try reducing the numbers of vcores requested or increasing your pool size."
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"%%configure -f \r\n",
+					"{\r\n",
+					"    \"numExecutors\": 4, \r\n",
+					"    \"executorCores\": 4,\r\n",
+					"    \"executorMemory\": \"28g\"\r\n",
+					"}"
+				],
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"print(spark.conf.get(\"spark.executor.instances\"))\r\n",
+					"print(spark.conf.get(\"spark.executor.cores\"))\r\n",
+					"print(spark.conf.get(\"spark.executor.memory\"))"
+				],
+				"execution_count": 4
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-autoscale#get-started"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"%%configure -f\r\n",
+					"    {\r\n",
+					"        \"conf\" : {\r\n",
+					"            \"spark.dynamicAllocation.enable\": \"true\",\r\n",
+					"            \"spark.dynamicAllocation.minExecutors\": \"2\",\r\n",
+					"            \"spark.dynamicAllocation.maxExecutors\" : \"6\"                        \r\n",
+					"     }\r\n",
+					"    }"
+				],
+				"execution_count": 5
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Prepare data"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"from azureml.opendatasets import NycTlcYellow\r\n",
+					"\r\n",
+					"from datetime import datetime\r\n",
+					"from dateutil import parser\r\n",
+					"start_date = parser.parse('2010-01-01')\r\n",
+					"end_date = parser.parse('2010-02-28')\r\n",
+					"\r\n",
+					"nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)\r\n",
+					"nyc_tlc_df = nyc_tlc.to_spark_dataframe()\r\n",
+					"\r\n",
+					"# nyc_tlc_df_clean = nyc_tlc_df.drop_duplicates()\r\n",
+					"nyc_tlc_df_clean = nyc_tlc_df.drop_duplicates().repartition(32)"
+				],
+				"execution_count": 6
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Converting Parquet to Delta"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"nyc_tlc_df_clean.write.mode(\"overwrite\").format(\"parquet\").save(\"/data/deltademo/parquettbl\")\r\n",
+					"nyc_tlc_df_clean.write.mode(\"overwrite\").format(\"parquet\").partitionBy(\"puYear\",\"puMonth\").save(\"/data/deltademo/partitionedparquettbl\")"
+				],
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"# Convert unpartitioned Parquet table at path '<path-to-table>'\r\n",
+					"deltaTable = DeltaTable.convertToDelta(spark, \"parquet.`/data/deltademo/parquettbl`\")\r\n",
+					"\r\n",
+					"# Convert partitioned parquet table at path '<path-to-table>' and partitioned by columns with data type, separated by comma\r\n",
+					"partitionedDeltaTable = DeltaTable.convertToDelta(spark, \"parquet.`/data/deltademo/partitionedparquettbl`\", \"puYear int, puMonth int\")"
+				],
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"-- Convert unpartitioned Parquet table at path '<path-to-table>'\r\n",
+					"CONVERT TO DELTA parquet.`/data/deltademo/parquettbl`;\r\n",
+					"\r\n",
+					"-- Convert partitioned Parquet table at path '<path-to-table>' and partitioned by columns with data type, separated by comma\r\n",
+					"CONVERT TO DELTA parquet.`/data/deltademo/partitionedparquettbl` PARTITIONED BY (puYear int, puMonth int);"
+				]
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Working with Dataframe"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# Creating managed delta tables\r\n",
+					"# nyc_tlc_df_clean.write.format(\"delta\").mode(\"overwrite\").saveAsTable(\"deltademo.deltataxitrips\")\r\n",
+					"# nyc_tlc_df_clean.write.mode(\"overwrite\").format(\"delta\").partitionBy(\"puYear\",\"puMonth\").saveAsTable(\"deltademo.deltapartitionedtaxitrips\")\r\n",
+					"\r\n",
+					"# Creating delta path/files\r\n",
+					"nyc_tlc_df_clean.write.mode(\"overwrite\").format(\"delta\").save(\"/data/deltademo/deltataxitrips\")\r\n",
+					"nyc_tlc_df_clean.write.mode(\"overwrite\").format(\"delta\").partitionBy(\"puYear\",\"puMonth\").save(\"/data/deltademo/deltapartitionedtaxitrips\")"
+				],
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"DROP DATABASE IF EXISTS deltademo CASCADE;"
+				],
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"spark.sql(\"CREATE DATABASE IF NOT EXISTS deltademo\")\r\n",
+					"spark.sql(\"CREATE TABLE IF NOT EXISTS deltademo.deltataxitrips USING DELTA LOCATION '{0}'\".format(\"/data/deltademo/deltataxitrips\")) \r\n",
+					"spark.sql(\"CREATE TABLE IF NOT EXISTS deltademo.deltapartitionedtaxitrips USING DELTA LOCATION '{0}'\".format(\"/data/deltademo/deltapartitionedtaxitrips\")) "
+				],
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"CREATE DATABASE IF NOT EXISTS deltademo;\r\n",
+					"\r\n",
+					"CREATE TABLE IF NOT EXISTS deltademo.deltataxitrips\r\n",
+					"USING DELTA\r\n",
+					"LOCATION '/data/deltademo/deltataxitrips';\r\n",
+					"\r\n",
+					"CREATE TABLE IF NOT EXISTS deltademo.deltapartitionedtaxitrips\r\n",
+					"USING DELTA\r\n",
+					"LOCATION '/data/deltademo/deltapartitionedtaxitrips';"
+				],
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"DESCRIBE deltademo.deltataxitrips;\r\n",
+					"DESCRIBE DETAIL deltademo.deltataxitrips;\r\n",
+					"\r\n",
+					"DESCRIBE deltademo.deltapartitionedtaxitrips;\r\n",
+					"DESCRIBE DETAIL deltademo.deltapartitionedtaxitrips;"
+				],
+				"execution_count": 13
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Data Merge"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT puYear, puMonth, count(*)\r\n",
+					"FROM deltademo.deltapartitionedtaxitrips \r\n",
+					"GROUP BY puYear, puMonth;"
+				],
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from azureml.opendatasets import NycTlcYellow\r\n",
+					"from datetime import datetime\r\n",
+					"from dateutil import parser\r\n",
+					"start_date = parser.parse('2010-02-01')\r\n",
+					"end_date = parser.parse('2010-03-31')\r\n",
+					"nyc_tlc_incr = NycTlcYellow(start_date=start_date, end_date=end_date)\r\n",
+					"nyc_tlc_incr_df = nyc_tlc_incr.to_spark_dataframe()\r\n",
+					"\r\n",
+					"nyc_tlc_incr_df_clean = nyc_tlc_incr_df.drop_duplicates().repartition(32)\r\n",
+					"nyc_tlc_incr_df_clean.createOrReplaceTempView(\"deltaincrementaltaxitrips\")"
+				],
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"MERGE INTO deltademo.deltapartitionedtaxitrips target\r\n",
+					"USING deltaincrementaltaxitrips source\r\n",
+					"ON \r\n",
+					"  source.vendorID = target.vendorID AND source.tpepPickupDateTime = target.tpepPickupDateTime \r\n",
+					"  AND source.tpepDropoffDateTime = target.tpepDropoffDateTime AND source.startLat = target.startLat \r\n",
+					"  AND source.startLon = target.startLon AND source.endLat = target.endLat AND source.endLon = target.endLon \r\n",
+					"  AND source.passengerCount = target.passengerCount AND source.tripDistance = target.tripDistance \r\n",
+					"  AND source.rateCodeId = target.rateCodeId AND source.paymentType = target.paymentType \r\n",
+					"  AND source.totalAmount = target.totalAmount\r\n",
+					"  AND target.puYear IN (2010) AND target.puMonth IN (2,3) -- Partition Pruning \r\n",
+					"WHEN MATCHED THEN\r\n",
+					"  UPDATE SET \r\n",
+					"    target.puLocationId = source.puLocationId\r\n",
+					"    , target.doLocationId = source.doLocationId\r\n",
+					"    , target.storeAndFwdFlag = source.storeAndFwdFlag\r\n",
+					"    , target.fareAmount = source.fareAmount\r\n",
+					"    , target.extra = source.extra\r\n",
+					"    , target.mtaTax = source.mtaTax\r\n",
+					"    , target.improvementSurcharge = source.improvementSurcharge\r\n",
+					"    , target.tipAmount = source.tipAmount\r\n",
+					"    , target.tollsAmount = source.tollsAmount\r\n",
+					"WHEN NOT MATCHED\r\n",
+					"  THEN INSERT (\r\n",
+					"    target.vendorID, target.tpepPickupDateTime, target.tpepDropoffDateTime, target.passengerCount, target.tripDistance,\r\n",
+					"    target.puLocationId, target.doLocationId, target.startLon, target.startLat, target.endLon, target.endLat, target.rateCodeId,\r\n",
+					"    target.storeAndFwdFlag, target.paymentType, target.fareAmount, target.extra, target.mtaTax, target.improvementSurcharge, target.tipAmount,\r\n",
+					"    target.tollsAmount, target.totalAmount, target.puYear, target.puMonth)   \r\n",
+					" VALUES (\r\n",
+					"   source.vendorID, source.tpepPickupDateTime, source.tpepDropoffDateTime, source.passengerCount, source.tripDistance,\r\n",
+					"   source.puLocationId, source.doLocationId, source.startLon, source.startLat, source.endLon, source.endLat, source.rateCodeId, \r\n",
+					"   source.storeAndFwdFlag, source.paymentType, source.fareAmount, source.extra, source.mtaTax, source.improvementSurcharge, source.tipAmount, \r\n",
+					"   source.tollsAmount, source.totalAmount, source.puYear, source.puMonth)"
+				],
+				"execution_count": 16
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT puYear, puMonth, count(*)\r\n",
+					"FROM deltademo.deltapartitionedtaxitrips \r\n",
+					"GROUP BY puYear, puMonth\r\n",
+					"ORDER BY puYear, puMonth;"
+				],
+				"execution_count": 17
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"\r\n",
+					"deltaTable = DeltaTable.forPath(spark, \"/data/events/\")\r\n",
+					"\r\n",
+					"deltaTable.alias(\"events\").merge(\r\n",
+					"    updatesDF.alias(\"updates\"),\r\n",
+					"    \"events.eventId = updates.eventId\") \\\r\n",
+					"  .whenMatchedUpdate(set = { \"data\" : \"updates.data\" } ) \\\r\n",
+					"  .whenNotMatchedInsert(values =\r\n",
+					"    {\r\n",
+					"      \"date\": \"updates.date\",\r\n",
+					"      \"eventId\": \"updates.eventId\",\r\n",
+					"      \"data\": \"updates.data\"\r\n",
+					"    }\r\n",
+					"  ) \\\r\n",
+					"  .execute()"
+				],
+				"execution_count": 19
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Time Travel - History of changes"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"DELETE FROM deltademo.deltapartitionedtaxitrips\r\n",
+					"WHERE puYear = 2010 AND puMonth = 1;"
+				],
+				"execution_count": 20
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT puYear, puMonth, count(*)\r\n",
+					"FROM deltademo.deltapartitionedtaxitrips \r\n",
+					"GROUP BY puYear, puMonth\r\n",
+					"ORDER BY puYear, puMonth;"
+				],
+				"execution_count": 21
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"--DESCRIBE HISTORY deltademo.deltapartitionedtaxitrips; -- LIMIT 1;  -- get the last operation only\r\n",
+					"DESCRIBE HISTORY delta.`/data/deltademo/deltapartitionedtaxitrips`; "
+				],
+				"execution_count": 22
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"deltapartitionedtaxitrips = DeltaTable.forPath(spark, '/data/deltademo/deltapartitionedtaxitrips')\r\n",
+					"display(deltapartitionedtaxitrips.history())"
+				],
+				"execution_count": 23
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"deltapartitionedtaxitrips = spark.read.format(\"delta\").option(\"versionAsOf\", 1).load(\"/data/deltademo/deltapartitionedtaxitrips\")  \r\n",
+					"display(deltapartitionedtaxitrips.groupBy(\"puYear\",\"puMonth\").count())"
+				],
+				"execution_count": 24
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"deltapartitionedtaxitrips = spark.read.format(\"delta\").option(\"timestampAsOf\", '2023-04-08 17:28:36.328').load(\"/data/deltademo/deltapartitionedtaxitrips\")  \r\n",
+					"display(deltapartitionedtaxitrips.groupBy(\"puYear\",\"puMonth\").count())"
+				],
+				"execution_count": 26
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## VACCUM - Maintaining history of past data"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"\r\n",
+					"-- vacuum files not required by versions older than the default retention period\r\n",
+					"VACUUM deltademo.deltapartitionedtaxitrips;\r\n",
+					"\r\n",
+					"-- vacuum files in path-based table\r\n",
+					"VACUUM '/data/deltademo/deltapartitionedtaxitrips'; \r\n",
+					"VACUUM delta.`/data/deltademo/deltapartitionedtaxitrips`;\r\n",
+					"\r\n",
+					"-- vacuum files not required by versions more than 720 hours (30 days) old\r\n",
+					"VACUUM delta.`/data/deltademo/deltapartitionedtaxitrips` RETAIN 720 HOURS;\r\n",
+					"\r\n",
+					" -- do dry run to get the list of files to be deleted\r\n",
+					"VACUUM deltademo.deltapartitionedtaxitrips DRY RUN;"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"\r\n",
+					"deltaTable = DeltaTable.forPath(spark, '/data/deltademo/deltapartitionedtaxitrips')  # path-based tables, or\r\n",
+					"deltaTable = DeltaTable.forName(spark, 'deltademo.deltapartitionedtaxitrips')    # Hive metastore-based tables\r\n",
+					"\r\n",
+					"deltaTable.vacuum(720)     # vacuum files not required by versions more than 720 hours (30 days) old\r\n",
+					"\r\n",
+					"deltaTable.vacuum()        # vacuum files not required by versions older than the default retention period"
+				]
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## File Compaction"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"path = \"/data/deltademo/deltapartitionedtaxitrips\"\r\n",
+					"partition = \"puYear = '2010' and puMonth = '3'\"\r\n",
+					"numFilesPerPartition = 16\r\n",
+					"\r\n",
+					"(spark.read\r\n",
+					" .format(\"delta\")\r\n",
+					" .load(path)\r\n",
+					" .where(partition)\r\n",
+					" .repartition(numFilesPerPartition)\r\n",
+					" .write\r\n",
+					" .option(\"dataChange\", \"false\")\r\n",
+					" .format(\"delta\")\r\n",
+					" .mode(\"overwrite\")\r\n",
+					" .option(\"replaceWhere\", partition)\r\n",
+					" .save(path))"
+				]
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"## Convert a Delta table to a Parquet table\r\n",
+					"\r\n",
+					"You can easily convert a Delta table back to a Parquet table using the following steps:\r\n",
+					"\r\n",
+					"If you have performed Delta Lake operations that can change the data files (for example, delete or merge), run vacuum with retention of 0 hours to delete all data files that do not belong to the latest version of the table.\r\n",
+					"Delete the _delta_log directory in the table directory.\r\n",
+					"\r\n",
+					"**NOTE: **Delta Lake has a safety check to prevent you from running a dangerous vacuum command. If you are certain that there are no operations being performed on this table that take longer than the retention interval you plan to specify, you can turn off this safety check by setting the Apache Spark configuration property spark.databricks.delta.retentionDurationCheck.enabled to false. You must choose an interval that is longer than the longest running concurrent transaction and the longest period that any stream can lag behind the most recent update to the table.\r\n",
+					"\r\n",
+					""
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"\r\n",
+					"deltaTable = DeltaTable.forPath(spark, '/data/deltademo/deltapartitionedtaxitrips')  # path-based tables, or\r\n",
+					"deltaTable = DeltaTable.forName(spark, 'deltademo.deltapartitionedtaxitrips')    # Hive metastore-based tables\r\n",
+					"\r\n",
+					"deltaTable.vacuum(0)        # vacuum files not required by versions older than the default retention period"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"spark.conf.get(\"spark.databricks.delta.retentionDurationCheck.enabled\")"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"spark.conf.set(\"spark.databricks.delta.retentionDurationCheck.enabled\", \"false\")"
+				]
+			}
+		]
+	}
+}
